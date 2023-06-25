@@ -7,14 +7,23 @@ CXXFLAGS = -std=c++11 -Wall
 # Chemins d'inclusion des en-têtes SFML
 SFML_INCLUDE = -I/home/marsouin/Téléchargements/SFML-2.6.0/include
 
+# Chemin vers les sources du projet
+TARGET_DIR = exec
+
+# Chemin vers les includes du projet
+INCLUDE_DIR = code/include
+
+# Chemin vers l'executable du projet
+SRC_DIR = code/src
+
 # Chemins des bibliothèques SFML
 SFML_LIBS = -L/home/marsouin/Téléchargements/SFML-2.6.0/lib -lsfml-graphics -lsfml-window -lsfml-system
 
 # Nom du programme de sortie
-TARGET = pokemon_platine
+TARGET = $(TARGET_DIR)/pokemon_platine
 
 # Liste des fichiers source
-SOURCES = main.cpp
+SOURCES = $(SRC_DIR)/main.cpp
 
 # Export de LD_LIBRARY_PATH
 export LD_LIBRARY_PATH := /home/marsouin/Téléchargements/SFML-2.6.0/lib:$(LD_LIBRARY_PATH)

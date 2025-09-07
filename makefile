@@ -9,13 +9,13 @@ SRC_EXT = cpp
 OBJ_EXT = o
 
 SRCS = $(wildcard $(SRC_DIR)/*.$(SRC_EXT))
-
 OBJS = $(SRCS:$(SRC_DIR)/%.$(SRC_EXT)=$(SRC_DIR)/%.$(OBJ_EXT))
 
 # Options
 CXX = g++
-CXXFLAGS = -I$(INC_DIR) -Wall -std=c++11
+CXXFLAGS = -I$(INC_DIR) -I/opt/homebrew/opt/sfml@2/include -Wall -std=c++17
 
+LDFLAGS = -L/opt/homebrew/opt/sfml@2/lib
 SFML_LIBS = -lsfml-graphics -lsfml-window -lsfml-system
 
 # Default rule
@@ -23,7 +23,7 @@ all: $(EXEC)
 
 # Generate exec
 $(EXEC): $(OBJS)
-	$(CXX) $(OBJS) -o $(EXEC) $(SFML_LIBS)
+	$(CXX) $(OBJS) -o $(EXEC) $(LDFLAGS) $(SFML_LIBS)
 
 $(SRC_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT)
 	$(CXX) $(CXXFLAGS) -c $< -o $@

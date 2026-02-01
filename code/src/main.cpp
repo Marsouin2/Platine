@@ -16,7 +16,124 @@ enum Direction {
     LeftWalkTwo
 };
 
-int main() {
+bool canPlayerMoveToWantedDirection(const int &rWantedPlayerPosX, const int &rWantedPlayerPosY)
+{
+    bool retVal = true;
+
+    if ((rWantedPlayerPosX < 110) || (rWantedPlayerPosX > 395) || (rWantedPlayerPosY < 105) || (rWantedPlayerPosY > 280))
+    {
+        retVal = false;
+    }
+
+    return retVal;
+}
+
+void handlePlayerMovementAndSprite(sf::Event &event, sf::Clock &animClock, bool &isWalkOneAlreadyDisplayed, int &playerPosX, int &playerPosY, Direction &currentDir)
+{
+    // Détection des touches
+    if (event.type == sf::Event::KeyPressed) 
+    {
+        if (event.key.code == sf::Keyboard::Down)
+        {
+            sf::Time elapsed1 = animClock.getElapsedTime();
+            if (elapsed1.asSeconds() > 0.15f) // every 1s -> change sprite
+            {
+                if ((currentDir == Down) && (isWalkOneAlreadyDisplayed))
+                {
+                    currentDir = DownWalkTwo;
+                    isWalkOneAlreadyDisplayed = false;
+                }
+                else if (currentDir == Down)
+                {
+                    currentDir = DownWalkOne;
+                    isWalkOneAlreadyDisplayed = true;
+                }
+                else
+                {
+                    currentDir = Down;
+                }
+                animClock.restart();
+            }
+            if (canPlayerMoveToWantedDirection(playerPosX, playerPosY + 5))
+                playerPosY += 5;
+        }
+        else if (event.key.code == sf::Keyboard::Right)
+        {
+            sf::Time elapsed1 = animClock.getElapsedTime();
+            if (elapsed1.asSeconds() > 0.15f) // every 1s -> change sprite
+            {
+                if ((currentDir == Right) && (isWalkOneAlreadyDisplayed))
+                {
+                    currentDir = RightWalkTwo;
+                    isWalkOneAlreadyDisplayed = false;
+                }
+                else if (currentDir == Right)
+                {
+                    currentDir = RightWalkOne;
+                    isWalkOneAlreadyDisplayed = true;
+                }
+                else
+                {
+                    currentDir = Right;
+                }
+                animClock.restart();
+            }
+            if (canPlayerMoveToWantedDirection(playerPosX + 5, playerPosY))
+                playerPosX += 5;
+        }
+        else if (event.key.code == sf::Keyboard::Up)
+        {
+            sf::Time elapsed1 = animClock.getElapsedTime();
+            if (elapsed1.asSeconds() > 0.15f) // every 1s -> change sprite
+            {
+                if ((currentDir == Up) && (isWalkOneAlreadyDisplayed))
+                {
+                    currentDir = UpWalkTwo;
+                    isWalkOneAlreadyDisplayed = false;
+                }
+                else if (currentDir == Up)
+                {
+                    currentDir = UpWalkOne;
+                    isWalkOneAlreadyDisplayed = true;
+                }
+                else
+                {
+                    currentDir = Up;
+                }
+                animClock.restart();
+            }
+            if (canPlayerMoveToWantedDirection(playerPosX, playerPosY - 5))
+                playerPosY -= 5;
+        }
+        else if (event.key.code == sf::Keyboard::Left)
+        {
+            sf::Time elapsed1 = animClock.getElapsedTime();
+            if (elapsed1.asSeconds() > 0.15f) // every 1s -> change sprite
+            {
+                if ((currentDir == Left) && (isWalkOneAlreadyDisplayed))
+                {
+                    currentDir = LeftWalkTwo;
+                    isWalkOneAlreadyDisplayed = false;
+                }
+                else if (currentDir == Left)
+                {
+                    currentDir = LeftWalkOne;
+                    isWalkOneAlreadyDisplayed = true;
+                }
+                else
+                {
+                    currentDir = Left;
+                }
+                animClock.restart();
+            }
+            if (canPlayerMoveToWantedDirection(playerPosX - 5, playerPosY))
+                playerPosX -= 5;
+        }
+    }
+}
+
+int main()
+{
     sf::RenderWindow window(sf::VideoMode(512, 384), "Changement de direction");
     sf::Texture texture;
     sf::Texture texture2;
@@ -87,114 +204,18 @@ int main() {
     bool isWalkOneAlreadyDisplayed = false;
     while (window.isOpen()) {
         sf::Event event;
-        while (window.pollEvent(event)) {
+        while (window.pollEvent(event))
+        {
             if (event.type == sf::Event::Closed)
                 window.close();
 
-            // Détection des touches
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Down)
-                {
-                    sf::Time elapsed1 = animClock.getElapsedTime();
-                    if (elapsed1.asSeconds() > 0.15f) // every 1s -> change sprite
-                    {
-                        if ((currentDir == Down) && (isWalkOneAlreadyDisplayed))
-                        {
-                            currentDir = DownWalkTwo;
-                            isWalkOneAlreadyDisplayed = false;
-                        }
-                        else if (currentDir == Down)
-                        {
-                            currentDir = DownWalkOne;
-                            isWalkOneAlreadyDisplayed = true;
-                        }
-                        else
-                        {
-                            currentDir = Down;
-                        }
-                        animClock.restart();
-                    }
-                    playerPosY += 5;
-                }
-                else if (event.key.code == sf::Keyboard::Right)
-                {
-                    sf::Time elapsed1 = animClock.getElapsedTime();
-                    if (elapsed1.asSeconds() > 0.15f) // every 1s -> change sprite
-                    {
-                        if ((currentDir == Right) && (isWalkOneAlreadyDisplayed))
-                        {
-                            currentDir = RightWalkTwo;
-                            isWalkOneAlreadyDisplayed = false;
-                        }
-                        else if (currentDir == Right)
-                        {
-                            currentDir = RightWalkOne;
-                            isWalkOneAlreadyDisplayed = true;
-                        }
-                        else
-                        {
-                            currentDir = Right;
-                        }
-                        animClock.restart();
-                    }
-                    playerPosX += 5;
-                }
-                else if (event.key.code == sf::Keyboard::Up)
-                {
-                    sf::Time elapsed1 = animClock.getElapsedTime();
-                    if (elapsed1.asSeconds() > 0.15f) // every 1s -> change sprite
-                    {
-                        if ((currentDir == Up) && (isWalkOneAlreadyDisplayed))
-                        {
-                            currentDir = UpWalkTwo;
-                            isWalkOneAlreadyDisplayed = false;
-                        }
-                        else if (currentDir == Up)
-                        {
-                            currentDir = UpWalkOne;
-                            isWalkOneAlreadyDisplayed = true;
-                        }
-                        else
-                        {
-                            currentDir = Up;
-                        }
-                        animClock.restart();
-                    }
-                    playerPosY -= 5;
-                }
-                else if (event.key.code == sf::Keyboard::Left)
-                {
-                    sf::Time elapsed1 = animClock.getElapsedTime();
-                    if (elapsed1.asSeconds() > 0.15f) // every 1s -> change sprite
-                    {
-                        if ((currentDir == Left) && (isWalkOneAlreadyDisplayed))
-                        {
-                            currentDir = LeftWalkTwo;
-                            isWalkOneAlreadyDisplayed = false;
-                        }
-                        else if (currentDir == Left)
-                        {
-                            currentDir = LeftWalkOne;
-                            isWalkOneAlreadyDisplayed = true;
-                        }
-                        else
-                        {
-                            currentDir = Left;
-                        }
-                        animClock.restart();
-                    }
-                    playerPosX -= 5;
-                }
+            handlePlayerMovementAndSprite(event, animClock, isWalkOneAlreadyDisplayed, playerPosX, playerPosY, currentDir);
 
-                // Mettre à jour le sprite
-                std::cout << "currentDir = " << currentDir << std::endl;
-                sf::Vector2i pos = directionCoords[currentDir];
-                std::cout << "sprite x = " << pos.x << " sprite y = " << pos.y << std::endl;
-                sprite.setTextureRect(sf::IntRect(pos.x, pos.y, SPRITE_W, SPRITE_H));
-                std::cout << "position du player en X = " << playerPosX << " et en Y = " << playerPosY << std::endl;
-                sprite.setPosition(playerPosX, playerPosY);
-                backgroundSprite.setTextureRect(sf::IntRect(262, 5, 245, 168));
-            }
+            // Mettre à jour le sprite
+            sf::Vector2i pos = directionCoords[currentDir];
+            sprite.setTextureRect(sf::IntRect(pos.x, pos.y, SPRITE_W, SPRITE_H));
+            sprite.setPosition(playerPosX, playerPosY);
+            backgroundSprite.setTextureRect(sf::IntRect(262, 5, 245, 168));
         }
 
         window.clear(sf::Color::Black);

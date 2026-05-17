@@ -13,7 +13,7 @@ OBJS = $(SRCS:$(SRC_DIR)/%.$(SRC_EXT)=$(SRC_DIR)/%.$(OBJ_EXT))
 
 # Options
 CXX = g++
-CXXFLAGS = -I$(INC_DIR) -I/opt/homebrew/opt/sfml@2/include -Wall -std=c++17
+CXXFLAGS = -I$(INC_DIR) -I/opt/homebrew/opt/sfml@2/include -Wall -std=c++17 -Iexternals
 
 LDFLAGS = -L/opt/homebrew/opt/sfml@2/lib
 SFML_LIBS = -lsfml-graphics -lsfml-window -lsfml-system

@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/Platine.dir/code/src/main.cpp.o CMakeFiles/Platine.dir/code/src/MapContentReader.cpp.o CMakeFiles/Platine.dir/code/src/MapData.cpp.o -o Platine  /opt/homebrew/lib/libsfml-graphics.2.6.2.dylib /opt/homebrew/lib/libsfml-window.2.6.2.dylib /opt/homebrew/lib/libsfml-system.2.6.2.dylib

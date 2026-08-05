@@ -114,11 +114,41 @@ CMakeFiles/Platine.dir/code/src/MapData.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Platine.dir/code/src/MapData.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Marsouin/CS/Projects/Platine/code/src/MapData.cpp -o CMakeFiles/Platine.dir/code/src/MapData.cpp.s
 
+CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o: CMakeFiles/Platine.dir/flags.make
+CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o: /Users/Marsouin/CS/Projects/Platine/code/src/SFMLGraphicalDisplay.cpp
+CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o: CMakeFiles/Platine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/Marsouin/CS/Projects/Platine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o -MF CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o.d -o CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o -c /Users/Marsouin/CS/Projects/Platine/code/src/SFMLGraphicalDisplay.cpp
+
+CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Marsouin/CS/Projects/Platine/code/src/SFMLGraphicalDisplay.cpp > CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.i
+
+CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Marsouin/CS/Projects/Platine/code/src/SFMLGraphicalDisplay.cpp -o CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.s
+
+CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o: CMakeFiles/Platine.dir/flags.make
+CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o: /Users/Marsouin/CS/Projects/Platine/code/src/SFMLEventManager.cpp
+CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o: CMakeFiles/Platine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/Marsouin/CS/Projects/Platine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o -MF CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o.d -o CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o -c /Users/Marsouin/CS/Projects/Platine/code/src/SFMLEventManager.cpp
+
+CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Marsouin/CS/Projects/Platine/code/src/SFMLEventManager.cpp > CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.i
+
+CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Marsouin/CS/Projects/Platine/code/src/SFMLEventManager.cpp -o CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.s
+
 # Object files for target Platine
 Platine_OBJECTS = \
 "CMakeFiles/Platine.dir/code/src/main.cpp.o" \
 "CMakeFiles/Platine.dir/code/src/MapContentReader.cpp.o" \
-"CMakeFiles/Platine.dir/code/src/MapData.cpp.o"
+"CMakeFiles/Platine.dir/code/src/MapData.cpp.o" \
+"CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o" \
+"CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o"
 
 # External object files for target Platine
 Platine_EXTERNAL_OBJECTS =
@@ -126,12 +156,14 @@ Platine_EXTERNAL_OBJECTS =
 Platine: CMakeFiles/Platine.dir/code/src/main.cpp.o
 Platine: CMakeFiles/Platine.dir/code/src/MapContentReader.cpp.o
 Platine: CMakeFiles/Platine.dir/code/src/MapData.cpp.o
+Platine: CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o
+Platine: CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o
 Platine: CMakeFiles/Platine.dir/build.make
 Platine: /opt/homebrew/lib/libsfml-graphics.2.6.2.dylib
 Platine: /opt/homebrew/lib/libsfml-window.2.6.2.dylib
 Platine: /opt/homebrew/lib/libsfml-system.2.6.2.dylib
 Platine: CMakeFiles/Platine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/Marsouin/CS/Projects/Platine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Platine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/Marsouin/CS/Projects/Platine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Platine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Platine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

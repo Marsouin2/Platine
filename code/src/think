@@ -1,0 +1,4 @@
+Ok maintenant que j'ai lu la map et que je l'ai stockee, je dois afficher la map, le perso sur son endroit de spawn.
+-> creer une classe qui va gerer l'affichage de la SFML
+--> creer une interface qui va etre utilisee par sa classe fille SFML specialisation (mere = IGraphicalDisplay fille = SFMLGraphicalDisplay)
+---> les fonctions de la mere doivent etre basiques, et reprises si j'utilise une autre lib graphique que SFML

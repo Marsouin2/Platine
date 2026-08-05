@@ -177,6 +177,54 @@ code/src/MapData.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Platine.dir/build.make CMakeFiles/Platine.dir/code/src/MapData.cpp.s
 .PHONY : code/src/MapData.cpp.s
 
+code/src/SFMLEventManager.o: code/src/SFMLEventManager.cpp.o
+.PHONY : code/src/SFMLEventManager.o
+
+# target to build an object file
+code/src/SFMLEventManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Platine.dir/build.make CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.o
+.PHONY : code/src/SFMLEventManager.cpp.o
+
+code/src/SFMLEventManager.i: code/src/SFMLEventManager.cpp.i
+.PHONY : code/src/SFMLEventManager.i
+
+# target to preprocess a source file
+code/src/SFMLEventManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Platine.dir/build.make CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.i
+.PHONY : code/src/SFMLEventManager.cpp.i
+
+code/src/SFMLEventManager.s: code/src/SFMLEventManager.cpp.s
+.PHONY : code/src/SFMLEventManager.s
+
+# target to generate assembly for a file
+code/src/SFMLEventManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Platine.dir/build.make CMakeFiles/Platine.dir/code/src/SFMLEventManager.cpp.s
+.PHONY : code/src/SFMLEventManager.cpp.s
+
+code/src/SFMLGraphicalDisplay.o: code/src/SFMLGraphicalDisplay.cpp.o
+.PHONY : code/src/SFMLGraphicalDisplay.o
+
+# target to build an object file
+code/src/SFMLGraphicalDisplay.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Platine.dir/build.make CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.o
+.PHONY : code/src/SFMLGraphicalDisplay.cpp.o
+
+code/src/SFMLGraphicalDisplay.i: code/src/SFMLGraphicalDisplay.cpp.i
+.PHONY : code/src/SFMLGraphicalDisplay.i
+
+# target to preprocess a source file
+code/src/SFMLGraphicalDisplay.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Platine.dir/build.make CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.i
+.PHONY : code/src/SFMLGraphicalDisplay.cpp.i
+
+code/src/SFMLGraphicalDisplay.s: code/src/SFMLGraphicalDisplay.cpp.s
+.PHONY : code/src/SFMLGraphicalDisplay.s
+
+# target to generate assembly for a file
+code/src/SFMLGraphicalDisplay.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Platine.dir/build.make CMakeFiles/Platine.dir/code/src/SFMLGraphicalDisplay.cpp.s
+.PHONY : code/src/SFMLGraphicalDisplay.cpp.s
+
 code/src/main.o: code/src/main.cpp.o
 .PHONY : code/src/main.o
 
@@ -216,6 +264,12 @@ help:
 	@echo "... code/src/MapData.o"
 	@echo "... code/src/MapData.i"
 	@echo "... code/src/MapData.s"
+	@echo "... code/src/SFMLEventManager.o"
+	@echo "... code/src/SFMLEventManager.i"
+	@echo "... code/src/SFMLEventManager.s"
+	@echo "... code/src/SFMLGraphicalDisplay.o"
+	@echo "... code/src/SFMLGraphicalDisplay.i"
+	@echo "... code/src/SFMLGraphicalDisplay.s"
 	@echo "... code/src/main.o"
 	@echo "... code/src/main.i"
 	@echo "... code/src/main.s"

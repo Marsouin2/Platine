@@ -6,6 +6,8 @@ add_executable(Platine
     code/src/main.cpp
     code/src/MapContentReader.cpp
     code/src/MapData.cpp
+    code/src/SFMLGraphicalDisplay.cpp
+    code/src/SFMLEventManager.cpp
 )
 
 target_compile_features(Platine PRIVATE cxx_std_17)

@@ -8,17 +8,22 @@
 #include <sstream>
 #include <nlohmann/json.hpp>
 
+#include "PointPosition.h"
 #include "MapData.h"
 
 class MapContentReader
 {
 public:
     MapContentReader();
-    MapContentReader(std::string mapNameToLoad);
+    MapContentReader(std::string& mapNameToLoad);
     ~MapContentReader() = default;
 
-private:
+private: // # functions
+    void loadMapDataInternally(const std::string& mapNameToLoad);
+
+private: // # attributes
     std::shared_ptr<MapData> _mapData;
+    const std::string _veryFirstMapName = "resources/Player_First_Floor.json";
 };
 
 #endif

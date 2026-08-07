@@ -24,6 +24,7 @@ public:
     virtual ~SFMLGraphicalDisplay() = default;
     void renderWindow() override;
     void drawOnWindow() override;
+    void drawMapBackground(const std::string& rMapFilepath);
     bool isWindowOpened() const { return _pWindow->isOpen(); }
     std::shared_ptr<sf::RenderWindow> getWindow() { return _pWindow; } // ADU : Attention je mets des shared ptr de partout !
     std::shared_ptr<SFMLEventManager> getSFMLEventManager() { return _pSFMLEventManager; }

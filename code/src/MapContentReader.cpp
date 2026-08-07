@@ -22,9 +22,8 @@ void MapContentReader::loadMapDataInternally(const std::string& mapNameToLoad)
     {
         nlohmann::json Doc{nlohmann::json::parse(File)};
 
-        const auto bricks_json_data = Doc[0]["name"];
-        std::cout << "name = " << bricks_json_data << '\n';
-
+        // filename
+        _mapData->setMapFilename(Doc[0]["name"]);
         // height
         _mapData->setMapHeight(Doc[0]["height"]);
         // width

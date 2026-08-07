@@ -9,6 +9,8 @@ int main()
 
     SFMLGraphicalDisplay sfmlGraphicalDisplay;
 
+    //sfmlGraphicalDisplay.runGame(); // ADU : faire la boucle de gameplay ailleurs que dans le main (nouvelle classe ?)
+
     while (sfmlGraphicalDisplay.isWindowOpened())
     {
         while (sfmlGraphicalDisplay.getWindow()->pollEvent(sfmlGraphicalDisplay.getSFMLEventManager()->getEvent()))
@@ -16,13 +18,10 @@ int main()
             if (sfmlGraphicalDisplay.getSFMLEventManager()->getEvent().type == sf::Event::Closed)
                 sfmlGraphicalDisplay.getWindow()->close();
         }
-    }
 
-    /*while (window.isOpen())
-    {
-        // gameplay loop
-    }*/
+        sfmlGraphicalDisplay.drawMapBackground(mapContentReader.getMapData()->getMapFilename());
+        sfmlGraphicalDisplay.getWindow()->clear(sf::Color::Black);
+    }   
 
-    // dealocate everything needed
     return 0;
 }

@@ -13,6 +13,7 @@ public:
     ~MapData() = default;
 
     // # setter
+    void setMapFilename(const std::string& rNewMapFilename) { _mapFilename = rNewMapFilename; }
     void setMapMusicFile(const std::string& newMapMusicFilename) { _mapMusicFilename = newMapMusicFilename; }
     void setMapHeight(const double dNewMapHeight) { _mapHeight = dNewMapHeight; }
     void setMapWidth(const double dNewMapWidth) { _mapWidth = dNewMapWidth; }
@@ -20,6 +21,7 @@ public:
     void setMapTile(const std::vector<std::vector<char>> newMapTile) { _mapTile = std::move(newMapTile); }
 
     // # getter
+    const std::string getMapFilename() const { return _mapFilename; }
     const std::string getMapMusicFilename() const { return _mapMusicFilename; }
     const double getMapHeight() const { return _mapHeight; }
     const double getMapWidth() const { return _mapWidth; }
@@ -28,6 +30,7 @@ public:
 private: // # functions
 
 private: // # attributes
+    std::string _mapFilename;
     std::string _mapMusicFilename; // ADU : mettre des float au lieu des double pour utiliser moins de memoire ?
     double _mapHeight;
     double _mapWidth;

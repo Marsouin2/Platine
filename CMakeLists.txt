@@ -4,6 +4,7 @@ project(PlatineProject LANGUAGES CXX)
 
 add_executable(Platine
     code/src/main.cpp
+    code/src/GameMgr.cpp
     code/src/MapContentReader.cpp
     code/src/MapData.cpp
     code/src/SFMLGraphicalDisplay.cpp

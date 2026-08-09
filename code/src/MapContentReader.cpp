@@ -23,20 +23,20 @@ void MapContentReader::loadMapDataInternally(const std::string& mapNameToLoad)
         nlohmann::json Doc{nlohmann::json::parse(File)};
 
         // filename
-        _mapData->setMapFilename(Doc[0]["name"]);
+        _mapData->setMapFilename(Doc["name"]);
         // height
-        _mapData->setMapHeight(Doc[0]["height"]);
+        _mapData->setMapHeight(Doc["height"]);
         // width
-        _mapData->setMapWidth(Doc[0]["width"]);
+        _mapData->setMapWidth(Doc["width"]);
         // player spawn pos
-        PointPosition<double> playerSpawnPos(Doc[0]["spawn"].at("x"), Doc[0]["spawn"].at("y"));
+        PointPosition<double> playerSpawnPos(Doc["spawn"].at("x"), Doc["spawn"].at("y"));
         _mapData->setMapPlayerSpawnPos(playerSpawnPos);
 
         // music
-        _mapData->setMapMusicFile(Doc[0]["music"]);
+        _mapData->setMapMusicFile(Doc["music"]);
         std::cout << "on a charge la musique du fichier et c'est desormais en interne donc c'est : " << _mapData->getMapMusicFilename() << '\n';
 
-        const auto tiles_json_data = Doc[0]["tiles"];
+        const auto tiles_json_data = Doc["tiles"];
         std::vector<std::vector<char>> tempoVectorMapTile;
         for (size_t i = 0; i < _mapData->getMapHeight(); ++i)
         {

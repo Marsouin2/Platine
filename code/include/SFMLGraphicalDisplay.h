@@ -28,6 +28,7 @@ public:
     bool isWindowOpened() const { return _pWindow->isOpen(); }
     std::shared_ptr<sf::RenderWindow> getWindow() { return _pWindow; } // ADU : Attention je mets des shared ptr de partout !
     std::shared_ptr<SFMLEventManager> getSFMLEventManager() { return _pSFMLEventManager; }
+    void finalRenderWindow();
 
 private:
     std::shared_ptr<sf::RenderWindow> _pWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode(512, 384), "Changement de direction");

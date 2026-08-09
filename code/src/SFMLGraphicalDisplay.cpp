@@ -28,6 +28,11 @@ void SFMLGraphicalDisplay::drawMapBackground(const std::string& rMapFilepath)
     );
     backgroundSprite.setScale(backgroundScale, backgroundScale);
     backgroundSprite.setTextureRect(sf::IntRect(262, 5, 245, 168));
-    //window.draw(backgroundSprite);
+    _pWindow->draw(backgroundSprite);
     // draw
+}
+
+void SFMLGraphicalDisplay::finalRenderWindow()
+{
+    _pWindow->display();
 }

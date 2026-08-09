@@ -16,6 +16,7 @@ void GameMgr::run()
 
         sfmlGraphicalDisplay.getWindow()->clear(sf::Color::Black);
         sfmlGraphicalDisplay.drawMapBackground("resources/" + mapContentReader.getMapData()->getMapFilename()); // ici par exemple on charge en boucle le fichier
+        sfmlGraphicalDisplay.drawPlayer();
         sfmlGraphicalDisplay.finalRenderWindow();
     }
 }

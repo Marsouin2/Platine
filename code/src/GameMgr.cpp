@@ -2,6 +2,7 @@
 
 GameMgr::GameMgr()
 {
+    _poolOfGameThingsManager.instantiatePool();
 }
 
 void GameMgr::run()

@@ -1,8 +1,13 @@
 #include "PoolOfGameThingsManager.h"
 
+PoolOfGameThingsManager::PoolOfGameThingsManager()
+{
+    instantiatePool();
+}
+
 void PoolOfGameThingsManager::instantiateMap()
 {
-
+    _arrayPoolOfGameThings[EGameThing::renderedMap]._texture;
 }
 
 void PoolOfGameThingsManager::instantiatePlayer()

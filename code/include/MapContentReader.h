@@ -15,8 +15,8 @@ class MapContentReader
 {
 public:
     MapContentReader();
-    MapContentReader(std::string& mapNameToLoad);
     ~MapContentReader() = default;
+    void loadNewMap(const std::string& rMapNameToLoad);
     std::shared_ptr<MapData> getMapData() { return _mapData; }
 
 private: // # functions

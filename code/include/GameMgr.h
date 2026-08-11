@@ -12,10 +12,12 @@ public:
     ~GameMgr() = default;
     void run();
 
-private:
-    MapContentReader mapContentReader;
-    SFMLGraphicalDisplay sfmlGraphicalDisplay;
-    PoolOfGameThingsManager _poolOfGameThingsManager;
+private: // ## functions
+    void loadNewMap(const std::string& rNewMapFilepathToLoad);
+
+private: // ## attributs
+    std::shared_ptr<MapContentReader> _pMapContentReader;
+    SFMLGraphicalDisplay _sfmlGraphicalDisplay;
 };
 
 #endif

@@ -6,10 +6,9 @@ MapContentReader::MapContentReader() : _mapData(std::make_shared<MapData>())
     loadMapDataInternally(_veryFirstMapName);
 }
 
-MapContentReader::MapContentReader(std::string& mapNameToLoad) : _mapData(std::make_shared<MapData>())
+void MapContentReader::loadNewMap(const std::string& rMapNameToLoad)
 {
-    // # load the json map content into MapData class
-    loadMapDataInternally(mapNameToLoad);
+    loadMapDataInternally(rMapNameToLoad);
 }
 
 void MapContentReader::loadMapDataInternally(const std::string& mapNameToLoad)

@@ -4,8 +4,10 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+#include "PoolOfGameThingsManager.h"
 #include "SFMLEventManager.h"
 #include "IGraphicalDisplay.h"
+#include "MapContentReader.h"
 
 class SFMLGraphicalDisplay : public IGraphicalDisplay
 {
@@ -31,11 +33,13 @@ public:
     std::shared_ptr<sf::RenderWindow> getWindow() { return _pWindow; } // ADU : Attention je mets des shared ptr de partout !
     std::shared_ptr<SFMLEventManager> getSFMLEventManager() { return _pSFMLEventManager; }
     void finalRenderWindow();
+    void setMapContentReader(std::shared_ptr<MapContentReader> pMapContentReader) { _pMapContentReader = pMapContentReader; };
 
 private:
+    PoolOfGameThingsManager _poolOfGameThingsManager;
     std::shared_ptr<sf::RenderWindow> _pWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode(512, 384), "Changement de direction");
-    std::shared_ptr<SFMLEventManager> _pSFMLEventManager = std::make_shared<SFMLEventManager>();
     std::pair<int, int> _screenResolution;
+    std::shared_ptr<MapContentReader> _pMapContentReader;
     const std::string _sPlayerTextureFilepath = "resources/lucas.png";
     bool _didPlayerAlreadySpawned;
 };

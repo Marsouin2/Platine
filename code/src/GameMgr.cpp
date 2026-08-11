@@ -1,13 +1,20 @@
 #include "GameMgr.h"
 
-GameMgr::GameMgr()
+GameMgr::GameMgr() : _pMapContentReader(std::make_shared<MapContentReader>())
 {
-    _poolOfGameThingsManager.instantiatePool();
+    
+}
+
+void GameMgr::loadNewMap(const std::string& rNewMapFilepathToLoad)
+{
+    // if the player steps on a warp -> it goes to another map so load it and cascade the new pMapContentReader through daughter's classes
+    _pMapContentReader->loadNewMap(rNewMapFilepathToLoad);
+    _sfmlGraphicalDisplay.setMapContentReader(_pMapContentReader);
 }
 
 void GameMgr::run()
 {
-    while (sfmlGraphicalDisplay.isWindowOpened()) // ADU : il ne faut pas creer 40 trucs ou faire 40 operations dans le while pendant le jeu sinon ca va le faire en boucle
+    /*while (sfmlGraphicalDisplay.isWindowOpened()) // ADU : il ne faut pas creer 40 trucs ou faire 40 operations dans le while pendant le jeu sinon ca va le faire en boucle
     {
         while (sfmlGraphicalDisplay.getWindow()->pollEvent(sfmlGraphicalDisplay.getSFMLEventManager()->getEvent()))
         {
@@ -19,5 +26,5 @@ void GameMgr::run()
         sfmlGraphicalDisplay.drawMapBackground("resources/" + mapContentReader.getMapData()->getMapFilename()); // ici par exemple on charge en boucle le fichier
         sfmlGraphicalDisplay.drawPlayer();
         sfmlGraphicalDisplay.finalRenderWindow();
-    }
+    }*/
 }
